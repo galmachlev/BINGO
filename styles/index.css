@@ -1,0 +1,143 @@
+/* התייחסות כללית לעמוד ולגוף התוכן */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* תמונת הרקע של הדף */
+#body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(/images/AdobeStock_233893891.jpeg);
+  background-size: cover;
+  opacity: 0.7;
+  z-index: -1;
+  backdrop-filter: brightness(70%);
+}
+
+/* עיצוב הכותרת */
+#headline h1 {
+  color: #514c53;
+  font-size: 60px;
+  text-shadow: 4px 5px 10px rgba(74, 82, 83, 0.5);
+  transform: translate(-50%);
+  left: 25%;
+  margin: 6% 0;
+  position: absolute;
+}
+
+/* עיצוב התוכן הראשי של הדף */
+.container {
+  text-align: center;
+}
+
+/* עיצוב העיגול שמציג את המספר המוגרל */
+#ball-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #555bb8;
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  color: black;
+}
+
+/* עיצוב המספר בתוך העיגול */
+.ball {
+  background-color: rgb(233, 230, 230);
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-weight: 700;
+}
+
+/* עיצוב הטבלה */
+#table {
+  margin: auto;
+  width: 30%;
+  height: 30%; 
+  position: absolute;
+  top: 50%; 
+  left: -25%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+/* עיצוב התאים בטבלה */
+#table td {
+  text-align: center;
+  font-size: 24px;
+  padding: 10px;
+  background-color: #eaeeef;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* עיצוב התאים בטבלה בעת העברת העכבר עליהם */
+#table td:hover {
+  background-color: #02b2f4;
+  cursor: pointer;
+}
+
+/* עיצוב כפתור ההגרלה */
+#btn {
+  position: absolute;
+  left: 20%;
+  bottom: 11%; /* כיוון המרחק מהתחתית לפי הצורך */
+  transform: translateX(-50%);
+  background-color: #555bb8;
+  color: #ffffff;
+  border: none;
+  border-radius: 10%;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* עיצוב כפתור ההגרלה בעת העברת העכבר עליו */
+#btn:hover {
+  background-color: #02b2f4;
+}
+
+/* עיצוב המספר שמוגרל */
+#result {
+  font-size: 24px;
+  position: absolute;
+  bottom: 10%;
+  left: 27%;
+}
+
+/* אנימציה של קונפטי */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  opacity: 0.8;
+  border-radius: 50%;
+  animation: confetti-fall 3s infinite;
+  background-color: var(--confetti-color); 
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  100% {
+    transform: translate(300vw, 100vh) rotate(720deg);
+  }
+}
